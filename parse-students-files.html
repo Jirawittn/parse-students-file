@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+</head>
+<body>
+    <h2>Reading Student Information</h2>
+    <ol id="information"></ol>
+    <script>
+        fetch('student.json').then(response => {
+            return response.json();
+        }).then(data => {
+            wclass= data.wclass
+            for (let person of wclass) {
+                let order = document.createElement("li");
+    
+                document.getElementById("information").appendChild(order).innerHTML += 
+                person.student["@attributes"].id + " " + person.student.name.bold() + 
+                " has skills " + person.student.skill.italics() + "<br/>";
+            }
+        }).catch( err => {
+            document.body.innerHTML ="Error";
+        });
+    </script>
+</body>
+</html>
+

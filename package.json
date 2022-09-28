@@ -1,0 +1,13 @@
+{
+    "type": "module",
+    "dependencies": {
+        "inquirer": "^9.1.2",
+        "progress": "^2.0.3",
+        "reduce": "^1.0.2"
+    } 
+    ,"scripts": {
+        "add": "node add.js"
+    }
+    
+    
+}
